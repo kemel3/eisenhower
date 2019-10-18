@@ -10,7 +10,7 @@ import java.io.FileReader;
 public class TodoMatrix {
     
 
-    Map <String, TodoQuarter> todoQuarters = new Map<String,TodoQuarter>();
+    Map <String, TodoQuarter> todoQuarters = new Map <String,TodoQuarter>();
 
     //todoQuarters.put();
 
@@ -41,7 +41,10 @@ public class TodoMatrix {
             String[] variables = line.split("|");
             String title = variables[0];
             LocalDate deadline = LocalDate.parse(variables[1]);
-            boolean isImportant = variables[2];
+            boolean isImportant = false;
+            if (variables[2] != ""){
+                isImportant = true;
+            }
 
             addItem(title, deadline, isImportant);
 
