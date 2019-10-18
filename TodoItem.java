@@ -3,26 +3,40 @@ import java.time.LocalDate;
 public class TodoItem {
     String title;
     LocalDate deadline;
-    boolean isDone;
+    boolean isDone = false;
 
-    TodoItem(String title, LocalDate deadline){
-        this.deadline = deadline;
+    public TodoItem(String title, LocalDate deadline) {
         this.title = title;
+        this.deadline = deadline;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public LocalDate getDeadLine(){
+    public LocalDate getDeadLine() {
         return deadline;
     }
 
-    public void mark(){
-        this.isDone = true;
+    public void mark() {
+        isDone = true;
     }
 
-    public void unmark(){
-        this.isDone = false;
+    public void unmark() {
+        isDone = false;
+    }
+
+    public String toString() {
+        String abc = "";
+        if (this.isDone == true) {
+            abc += "[x] ";
+        }
+        else {
+            abc += "[ ] ";
+        }
+        abc += this.deadline + " ";
+        abc += this.title;
+        return abc;
+        
     }
 }

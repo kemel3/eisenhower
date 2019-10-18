@@ -2,7 +2,6 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        
         LocalDate date1 = LocalDate.parse("2018-08-01");
         TodoItem test = new TodoItem("invent1", date1);
 

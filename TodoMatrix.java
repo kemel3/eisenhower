@@ -7,9 +7,9 @@ import java.io.FileReader;
 
 public class TodoMatrix {
     
-    Map <String, TodoQuarter> todoQuarters = new HashMap <String, TodoQuarter>();
+    private Map <String, TodoQuarter> todoQuarters = new HashMap <String, TodoQuarter>();
     
-    public TodoMatrix(){
+    public TodoMatrix() {
         todoQuarters.put("IU", new TodoQuarter());
         todoQuarters.put("IN", new TodoQuarter());
         todoQuarters.put("NU", new TodoQuarter());
@@ -26,21 +26,18 @@ public class TodoMatrix {
 
     public void addItem(String title, LocalDate deadline, boolean isImportant) {
         
-       // todoQuarters.addItem()
-
     }
 
-    public void addItemsFromFile(String fileName) throws Exception{
-
+    public void addItemsFromFile(String fileName) throws Exception {
         File file = new File(fileName);
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
-        while((line = br.readLine()) != null){
+        while ((line = br.readLine()) != null) {
             String[] variables = line.split("|");
             String title = variables[0];
             LocalDate deadline = LocalDate.parse(variables[1]);
             boolean isImportant = false;
-            if (variables[2] != ""){
+            if (variables[2] != "") {
                 isImportant = true;
             }
             addItem(title, deadline, isImportant);
