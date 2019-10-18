@@ -8,12 +8,10 @@ public class TodoItem {
     TodoItem(String title, LocalDate deadline){
         this.deadline = deadline;
         this.title = title;
-        
     }
 
     public String getTitle(){
         return title;
-
     }
 
     public LocalDate getDeadLine(){
@@ -22,8 +20,6 @@ public class TodoItem {
 
     public void mark(){
         this.isDone = true;
-
-
     }
 
     public void unmark(){

@@ -43,19 +43,7 @@ public class TodoMatrix {
             if (variables[2] != ""){
                 isImportant = true;
             }
-
             addItem(title, deadline, isImportant);
-
-
         }
-
-
-
-
     }
-
-
-
-
-
 }

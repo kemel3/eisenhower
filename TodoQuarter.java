@@ -1,11 +1,10 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class TodoQuarter {
-    ArrayList<TodoItem> todoItems;
-
-    TodoQuarter(){
+    ArrayList <TodoItem> todoItems;
+    
+    public TodoQuarter(){
 
     }
 
@@ -21,23 +20,16 @@ public class TodoQuarter {
 
     }
     public TodoItem getItem(int index){
-
-
         return todoItems.get(index);
     }
 
-    private ArrayList<TodoItem> getItems(){
-
-
+    public ArrayList <TodoItem> getItems(){
         return todoItems; 
     }
 
     public String toString(){
 
         String formated = new String();
-
-
         return formated;
-
     }
 }
