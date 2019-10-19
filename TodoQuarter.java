@@ -1,24 +1,27 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class TodoQuarter {
-    ArrayList<TodoItem> todoItems = new ArrayList<TodoItem>();
+    ArrayList<TodoItem> todoItems = new ArrayList<>();
     
     public TodoQuarter() {
         // ArrayList <TodoItem> TodoQuarter;
     }
 
     public void addItem(String title, LocalDate deadline) {
-        TodoItem td = new TodoItem(title, deadline);
-        todoItems.add(td);
-        Comparator <TodoItem> c = Collections.reverseOrder();
-        todoItems.sort(c);
+        // TodoItem newitem = new TodoItem(title, deadline);
+        // todoItems.add(newitem);
+        for (int i = 0; i < todoItems.size(); i++) {
+            if (todoItems.get(i).getDeadLine().isBefore(deadline)) {
+                todoItems.add(i, new TodoItem(title, deadline));
+                return;
+            }
+        }
+        todoItems.add(new TodoItem(title, deadline));
     }
 
     public void removeItem(int index) {
-
+        
     }
 
     public void archiveItems() {
