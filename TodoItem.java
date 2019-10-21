@@ -14,8 +14,14 @@ public class TodoItem {
         return title;
     }
 
+    // create new method of Deadline()
+
     public LocalDate getDeadLine() {
         return deadline;
+    }
+
+    public boolean isDone() {
+        return isDone;
     }
 
     public void mark() {
